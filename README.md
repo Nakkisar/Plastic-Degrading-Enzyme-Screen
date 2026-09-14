@@ -1,7 +1,7 @@
 # Plastic-Degrading-Enzyme-Screen
 Neural Network pipeline to identify likely plastic degrading enzymes from FASTA files containing protein sequences.
 
-This is a sequence-embedding classifier pipeline for identifying candidate plastic-degrading enzymes — PET, PLA, PCL, and PHA/PHB — directly from protein sequence, at whole-genome/whole-proteome scale.
+This is a sequence-embedding classifier pipeline for identifying candidate plastic-degrading enzymes (PET, PLA, PCL, and PHA/PHB) directly from protein sequence, at whole-proteome scale.
 
 This tool takes any FASTA file of protein sequences (a genome, a metagenomic sample, a curated database export — anything) and, for each of four bioplastic types, produces a ranked list of the proteins most likely to be a degrading enzyme for that plastic. It's built to be a fast triage step: narrowing a large, unannotated candidate pool down to a short, prioritized list worth investigating further, ahead of slower structural or wet-lab work.
 
@@ -9,9 +9,9 @@ It does not replace structural modeling, docking, or experimental validation —
 
 Background
 
-The methodology follows a University of Padova master's thesis (Minto, 2023–2024), which developed a semi-supervised classifier for identifying PET-degrading enzymes from sequence embeddings. This project follows the same general structure — database-derived positive/negative labeling, sequence embedding via a pretrained protein language model, cross-validated classification — extended to three additional plastic types, with a larger current dataset snapshot, and a deliberately harder two-tier negative set (see Methodology below).
+The methodology follows a University of Padova master's thesis (Minto, 2023–2024), which developed a semi-supervised classifier for identifying PET-degrading enzymes from sequence embeddings. This project follows the same general structure, with database-derived positive/negative labeling, sequence embedding via a pretrained protein language model, cross-validated classification (extended to three additional plastic types), with a larger current dataset snapshot, and a deliberately harder two-tier negative set (see Methodology below).
 
-Structural information (e.g. AlphaFold-derived embeddings) was deliberately not included. The original thesis tested a combined sequence-and-structure approach for PET and found it did not meaningfully improve classification performance over sequence alone — this project followed that precedent to keep the pipeline simpler and faster.
+Structural information (e.g. AlphaFold-derived embeddings) was deliberately not included. The original thesis tested a combined sequence-and-structure approach for PET and found it did not meaningfully improve classification performance over sequence alone. This project followed that precedent to keep the pipeline simpler and faster.
 
 Validation: an independent real-world case study
 
@@ -27,11 +27,11 @@ Methodology
 
 Known limitations
 Training data is predominantly bacterial in origin; performance on distant taxa (e.g. fungi) is promising in the CAB683 case study above but not exhaustively validated.
-Recurring blind spot for broad-spectrum, multi-substrate generalist enzymes and near-identical sequence paralogs — these are the proteins most likely to need a second look rather than being taken at face value in either direction.
+Recurring blind spot for broad-spectrum, multi-substrate generalist enzymes and near-identical sequence paralogs. These proteins most likely to need a second look rather than being taken at face value in either direction as degrader or non-degrader.
 This is a sequence-only classifier. A structurally-informed model has not been tested against these specific targets and might behave differently.
 Predictions are a prioritization aid, not a confirmation of activity. Treat a high score as "worth investigating," not "confirmed."
 Data sources and licensing
-ESM2 (Meta AI, via fair-esm) — MIT license, code and weights, explicitly permitted for commercial use. Note: this is distinct from newer EvolutionaryScale models (ESM3, ESM C), which carry different, more restrictive non-commercial licensing — do not assume the same terms apply if upgrading models later.
+ESM2 (Meta AI, via fair-esm) — MIT license, code and weights, explicitly permitted for commercial use. Note: this is distinct from newer EvolutionaryScale models (ESM3, ESM C), which carry different, more restrictive non-commercial licensing.
 PlasticDB (Gambarini et al., 2022) — published CC BY 4.0; attribution required.
 UniProt/SwissProt — CC BY 4.0; explicitly available for commercial and non-commercial use; attribution required.
 Third-party libraries (PyTorch, scikit-learn, joblib, Pillow) — standard permissive open-source licenses.
