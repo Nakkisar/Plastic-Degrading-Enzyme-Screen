@@ -1,0 +1,11 @@
+{
+  "plastic_type": "PET",
+  "esm2_model_name": "esm2_t33_650M_UR50D",
+  "esm2_repr_layer": 33,
+  "embedding_dimension": 1280,
+  "training_dataset_file": "dataset_PET.fasta",
+  "n_training_proteins": 704,
+  "n_positive": 176,
+  "n_negative": 528,
+  "trained_on": "2026-09-11 16:28:37"
+}

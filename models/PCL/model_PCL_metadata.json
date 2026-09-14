@@ -1,0 +1,11 @@
+{
+  "plastic_type": "PCL",
+  "esm2_model_name": "esm2_t33_650M_UR50D",
+  "esm2_repr_layer": 33,
+  "embedding_dimension": 1280,
+  "training_dataset_file": "dataset_PCL.fasta",
+  "n_training_proteins": 188,
+  "n_positive": 47,
+  "n_negative": 141,
+  "trained_on": "2026-09-11 16:47:21"
+}

@@ -1,0 +1,11 @@
+{
+  "plastic_type": "PHA",
+  "esm2_model_name": "esm2_t33_650M_UR50D",
+  "esm2_repr_layer": 33,
+  "embedding_dimension": 1280,
+  "training_dataset_file": "dataset_PHA.fasta",
+  "n_training_proteins": 220,
+  "n_positive": 55,
+  "n_negative": 165,
+  "trained_on": "2026-09-11 16:52:40"
+}
