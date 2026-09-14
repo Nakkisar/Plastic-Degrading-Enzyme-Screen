@@ -3,8 +3,6 @@ Neural Network pipeline to identify likely plastic degrading enzymes from FASTA 
 
 This is a sequence-embedding classifier pipeline for identifying candidate plastic-degrading enzymes — PET, PLA, PCL, and PHA/PHB — directly from protein sequence, at whole-genome/whole-proteome scale.
 
-What this is
-
 This tool takes any FASTA file of protein sequences (a genome, a metagenomic sample, a curated database export — anything) and, for each of four bioplastic types, produces a ranked list of the proteins most likely to be a degrading enzyme for that plastic. It's built to be a fast triage step: narrowing a large, unannotated candidate pool down to a short, prioritized list worth investigating further, ahead of slower structural or wet-lab work.
 
 It does not replace structural modeling, docking, or experimental validation — it's a complementary first pass, not a replacement for either.
