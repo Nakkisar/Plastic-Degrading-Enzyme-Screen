@@ -1,0 +1,15 @@
+# Core dependencies for the plastic-degrading enzyme screener pipeline.
+#
+# Note on PyTorch: this file installs the default (CPU) build. If you have
+# an NVIDIA GPU and want CUDA acceleration, install torch separately BEFORE
+# running this file, using the command generator at:
+#     https://pytorch.org/get-started/locally/
+# then run `pip install -r requirements.txt` as normal -- pip will see
+# torch is already installed and skip it.
+
+torch>=2.3
+fair-esm>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+joblib>=1.3
+Pillow>=10.0
